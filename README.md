@@ -8,8 +8,7 @@ This is a minimal repo to provide repro steps for https://github.com/terraform-p
 1. provide a valid service account key at `account.json`
 1. `git checkout fc01d6556b4d39a4b66a7fe77ee562ed47e91061`
 1. `terraform init`
-1. `terraform apply`
-  * enter the gcp project (the service account whose key you provided above must have appropriate permissions in this project)
+1. `terraform apply` and enter the gcp project (the service account whose key you provided above must have appropriate permissions in this project)
 
 If all goes well (?), you will get this error:
 
@@ -33,8 +32,7 @@ Error: Error applying plan:
 ## WORKAROUND
 
 1. To clean things up from the first run repro'ing the problem, `terraform destroy`
-1. `git checkout 121327a68696e7d06ffd384870dea7f3fecb843e`
-  * this commit switches to the aliased provider which has the project set
+1. `git checkout 121327a68696e7d06ffd384870dea7f3fecb843e` (this commit switches to the aliased provider which has the project set)
 1. `terraform apply`
 
 **NOTE: you will get farther in the process (validating the workaround), but you will get the error below. I excluded the null resource which is running scripts to provision the IP range.**
