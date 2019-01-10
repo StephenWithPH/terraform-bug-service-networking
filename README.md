@@ -1,3 +1,7 @@
+## WHAT
+This is a minimal repo to provide repro steps for https://github.com/terraform-providers/terraform-provider-google/issues/2799.
+
+
 ## REPRO
 
 1. `git clone` this repo
@@ -24,6 +28,7 @@ Error: Error applying plan:
 
 * google_service_networking_connection.private_vpc_connection: Failed to find Service Networking Connection, err: Failed to retrieve network field value, err: project: required field is not set
 ```
+
 
 ## WORKAROUND
 
